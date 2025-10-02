@@ -19,6 +19,5 @@ public class Student {
         catch(Exception e){
             System.out.println("Database connection failed.");
         }
-
     }
 }
