@@ -28,9 +28,9 @@ public class StudentDAO {
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 System.out.println(
-                        rs.getInt("id") + " | " +
-                                rs.getString("name") + " | " +
-                                rs.getString("email") + " | Age: " +
+                        rs.getInt("id") + "  " +
+                                rs.getString("name") + "  " +
+                                rs.getString("email") + "  Age: " +
                                 rs.getInt("age")
                 );
             }

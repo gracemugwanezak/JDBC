@@ -2,11 +2,11 @@ import java.sql.Connection;
 
 public class Main {
     public static void main(String[] args) {
-        // Get the singleton instance
+        // singleton instance
         DatabaseConnection db = DatabaseConnection.getInstance();
 
 
-        // Get the actual JDBC connection
+        //  JDBC connection
         try {
             Connection conn = db.getConnection();
             if (conn != null && !conn.isClosed()) {
@@ -17,13 +17,9 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        StudentDAO studentDAO = new StudentDAO();
 
 
 
-        // Read all students
-        System.out.println("\nAll students:");
-        studentDAO.getAllStudents();
 
 
 
