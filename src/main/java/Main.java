@@ -5,6 +5,7 @@ public class Main {
         // Get the singleton instance
         DatabaseConnection db = DatabaseConnection.getInstance();
 
+
         // Get the actual JDBC connection
         try {
             Connection conn = db.getConnection();
@@ -16,5 +17,17 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        StudentDAO studentDAO = new StudentDAO();
+
+
+
+        // Read all students
+        System.out.println("\nAll students:");
+        studentDAO.getAllStudents();
+
+
+
     }
 }
+
+
