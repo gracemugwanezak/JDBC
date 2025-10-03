@@ -2,7 +2,7 @@ public  class AddStudentDAO
 {
     public static void main(String[] args) {
         StudentDAO studentDAO = new StudentDAO();
-        studentDAO.addStudent("Grace Mugwaneza", "grace@example.com", 24);
-        studentDAO.addStudent("John Doe", "john@example.com", 25);
+        studentDAO.addStudent("Gretta", "gretta@example.com", 24);
+        studentDAO.addStudent("Mukiza", "Mukiza@example.com", 25);
     }
 }

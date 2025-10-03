@@ -1,3 +1,5 @@
+import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,18 +9,20 @@ public class DatabaseConnection {
     private Connection connection;
 
 
-    private final String url = "jdbc:postgresql://localhost:5432/SchoolDatabase";
-    private final String username= "postgres";
-    private final String password= "Grace@1231";
+
 
     // Private constructor
     private DatabaseConnection() {
         try {
+            Dotenv dotenv = Dotenv.load();
+            String url = dotenv.get("URL");
+            String username = dotenv.get("USERNAME");
+            String password = dotenv.get("PASSWORD");
             // Register PostgreSQL driver
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException | ClassNotFoundException e) {
-            System.out.println("Connection Failed! Check output console");
+            System.out.println("Connection Failed");
         }
     }
 
